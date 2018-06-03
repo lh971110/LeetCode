@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var plusOne = function(digits) {
+			if(digits[digits.length - 1] < 9) {
+					digits[digits.length - 1] += 1;
+					return digits;
+				}
+
+				digits[digits.length - 1] = 0;
+
+				if(digits.length == 1) {
+					digits.unshift(1);
+					return digits;
+				}
+
+
+				digits.reverse();
+
+		    for(var i = 1; i < digits.length; i++) {
+					if(digits[i] < 9) {
+						digits[i] += 1;
+						break;
+					} else {
+						digits[i] = 0;
+						if(i == digits.length - 1) {
+							digits.push(1);
+							break;
+						}
+					}
+				}
+
+				digits.reverse();
+				return digits;
+
+			};
+		</script>
+	</body>
+
+</html>

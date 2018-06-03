@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+//			var moveZeroes = function(nums) {
+//				var len = nums.length;
+//				for (var i = 0; i < len; i++) {
+//					if(nums[i] == 0){
+//						nums.splice(i,1);
+//						i--;
+//					}
+//				}
+//				var len2 = len-nums.length;
+//				for (var i = 0; i < len2; i++) {
+//					nums.push(0);
+//				}
+//				
+//				console.log(nums);
+//
+//			};
+//		   moveZeroes([0,1,0,3,12]) ;
+		   
+		   var moveZeroes = function(nums) {
+		   	for (var i = 0; i < nums.ngth; i++) {
+		   		nums[i].index = i;
+		   		if (nums[i] == 0) {
+		   			nums[i].index = nums.length - 1;
+		   			return nums;
+		   		}
+		   	}
+		   	
+		   }
+		  console.log(moveZeroes([0,1,0,3,12]))  ;
+		</script>
+	</body>
+
+</html>
