@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var lengthOfLastWord = function(s) {
+				var s1 = s.split(' ');
+				var s2 = s1.reverse();
+					for(var i = 0; i < s2.length; i++) {
+						if(s2[i] !== '' ) {
+							return s2[i].length;
+							break;
+						}
+					}
+					return 0
+				
+
+			};
+			console.log(lengthOfLastWord('djskfjdk '));
+		</script>
+	</body>
+
+</html>

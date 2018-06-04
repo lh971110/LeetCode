@@ -9,43 +9,71 @@
 	<body>
 		<script type="text/javascript">
 			var addBinary = function(a, b) {
-//				var arr1 = [];
-//				var str1 =  a.split('');
-//				str1.forEach(function(data){
-//					arr1.push(+data);
-//				});
-//				var num1= 0;
-//				for (var i = 0; i < str1.length; i++) {
-//				   num1 += str1[i] * Math.pow(2,str1.length - i -1) 
-//				}
-//				console.log(num1);
-//				
-//				var arr2 = [];
-//				var str2 =  b.split('');
-//				str2.forEach(function(data){
-//					arr2.push(+data);
-//				});
-//				var num2 = 0;
-//				for (var i = 0; i < str2.length; i++) {
-//				   num2 += str2[i] * Math.pow(2,str2.length - i -1) 
-//				}
-//				console.log(num2);
+				//				var arr1 = [];
+				//				var str1 =  a.split('');
+				//				str1.forEach(function(data){
+				//					arr1.push(+data);
+				//				});
+				//				var num1= 0;
+				//				for (var i = 0; i < str1.length; i++) {
+				//				   num1 += str1[i] * Math.pow(2,str1.length - i -1) 
+				//				}
+				//				console.log(num1);
+				//				
+				//				var arr2 = [];
+				//				var str2 =  b.split('');
+				//				str2.forEach(function(data){
+				//					arr2.push(+data);
+				//				});
+				//				var num2 = 0;
+				//				for (var i = 0; i < str2.length; i++) {
+				//				   num2 += str2[i] * Math.pow(2,str2.length - i -1) 
+				//				}
+				//				console.log(num2);
 
+				var num1 = parseInt(a, 2)
+				var num2 = parseInt(b, 2)
 
-
-                var num1 =  parseInt(a,2)
-                var num2 =  parseInt(b,2)
-                
 				var sum = num1 + num2;
 				console.log(sum.toString(2));
-
-
-
-
-               
 				
+				
+				
+
+				var addBinary = function(a, b) {
+'111'					a = a.split('').reverse().join('');
+'110'					b = b.split('').reverse().join('');
+					var len = Math.max(a.length, b.length);
+					var upTwo = false;
+					var strs = [];
+					for(var i = 0; i < len + 1; i++) {
+						var strA = a[i] == undefined ? 0 : a[i] * 1;
+						var strB = b[i] == undefined ? 0 : b[i] * 1;
+
+						if(upTwo == true) str = strA + strB + 1;
+						else str = strA + strB;
+
+						if(str >= 2) upTwo = true;
+						else upTwo = false;
+						str = str % 2;
+						strs.push(str);
+					}
+
+					strs = strs.reverse().join('');
+
+					while(strs[0] == 0) {
+						checkZero();
+					}
+					if(strs == "") strs = '0';
+					return strs;
+
+					function checkZero() {
+						strs = strs.substring(1, strs.length);
+					}
+				};
+
 			};
-			addBinary("11","1");
+			addBinary("11", "1");
 		</script>
 	</body>
 
